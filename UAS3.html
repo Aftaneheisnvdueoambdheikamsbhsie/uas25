@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Total Belanja dan Diskon</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <!-- Container Utama -->
+    <div class="container">
+        <!-- Bagian Input -->
+        <div class="input-section">
+            <h2>Hitung Total Belanja dan Diskon</h2>
+            <form id="belanjaForm">
+                <label for="item1">Harga Item 1 (Rp):</label>
+                <input type="number" id="item1" placeholder="Masukkan harga item 1" required><br>
+
+                <label for="item2">Harga Item 2 (Rp):</label>
+                <input type="number" id="item2" placeholder="Masukkan harga item 2" required><br>
+
+                <label for="item3">Harga Item 3 (Rp):</label>
+                <input type="number" id="item3" placeholder="Masukkan harga item 3" required><br>
+
+                <button type="button" onclick="hitungTotal()">Hitung Total dan Diskon</button>
+            </form>
+        </div>
+
+        <!-- Bagian Output -->
+        <div class="output-section">
+            <h2>Hasil Perhitungan:</h2>
+            <p id="output"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
