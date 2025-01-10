@@ -1,15 +1,14 @@
-
+/* Reset Margin dan Padding */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
 }
 
 /* Header */
 header {
     background-color: #b8e0e3;
-    padding: 15px 20px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     border-bottom: 2px solid black;
@@ -17,28 +16,30 @@ header {
 
 .logo {
     height: 80px;
-    margin-right: 20px;
+    margin-right: 15px;
 }
 
-.title h1 {
+.header-text h1 {
     margin: 0;
     font-size: 22px;
     font-weight: bold;
 }
 
-.title p {
+.header-text p {
     margin: 5px 0 0;
     font-size: 14px;
 }
 
-/* Main Frame */
+/* Frame Utama */
 .frame {
     display: flex;
     justify-content: space-between;
-    margin: 20px;
+    margin: 20px auto;
+    width: 90%;
+    background-color: white;
     border: 2px solid black;
-    background-color: #ffffff;
     padding: 10px;
+    box-sizing: border-box;
     height: 300px;
 }
 
@@ -51,27 +52,22 @@ header {
 .column h2 {
     margin-bottom: 20px;
     font-size: 16px;
-    text-transform: uppercase;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
-.column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.column ul li {
-    margin: 10px 0;
-    font-size: 14px;
+.menu div {
     background-color: #f44336;
     color: white;
     padding: 10px;
+    margin: 10px 0;
     border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-.column ul li:hover {
+.menu div:hover {
     background-color: #d32f2f;
 }
 
@@ -89,5 +85,4 @@ footer {
     padding: 10px;
     border-top: 2px solid black;
     font-size: 14px;
-    margin-top: 20px;
 }
