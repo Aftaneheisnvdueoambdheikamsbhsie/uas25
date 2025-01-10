@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b8e0e3;
+    padding: 10px 0;
+    border-bottom: 2px solid black;
+}
+
+header .logo img {
+    height: 80px;
+    margin-right: 20px;
+}
+
+header .title h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+header .title p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+main {
+    padding: 20px;
+}
+
+.data-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.data-campus {
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #ffffff;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.data-campus h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.data-campus button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.data-campus button:hover {
+    background-color: #d32f2f;
+}
+
+footer {
+    text-align: center;
+    background-color: #b8e0e3;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 20px;
+    border-top: 2px solid black;
+}
