@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universitas Indraprasta PGRI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="unindra.png" alt="Logo PGRI">
+        </div>
+        <div class="title">
+            <h1>UNIVERSITAS INDRAPRASTA PGRI</h1>
+            <p>Jl. Nangka No.58 Tanjung Barat - Jaksel</p>
+        </div>
+    </header>
+    <main>
+        <div class="data-section">
+            <div class="data-campus">
+                <h2>TAMPIL DATA KAMPUS A</h2>
+                <button>Input Data Mahasiswa</button>
+                <button>Tampil Data Mahasiswa</button>
+                <button>Laporan Data Mahasiswa</button>
+            </div>
+            <div class="data-campus">
+                <h2>DATA KAMPUS B</h2>
+                <button>Input Data Mahasiswa</button>
+                <button>Tampil Data Mahasiswa</button>
+                <button>Laporan Data Mahasiswa</button>
+            </div>
+            <div class="data-campus">
+                <h2>TAMPIL DATA KAMPUS C</h2>
+                <button>Input Data Mahasiswa</button>
+                <button>Tampil Data Mahasiswa</button>
+                <button>Laporan Data Mahasiswa</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Created By @NPM dan Nama Tahun 2024-25</p>
+    </footer>
+</body>
+</html>
