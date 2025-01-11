@@ -1,40 +1,127 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hitung Total Belanja dan Diskon</title>
-    <link rel="stylesheet" href="styles2.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .input-section, .output-section {
+            width: 45%;
+            border: 1px solid black;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .input-section h3, .output-section h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+        input[type="text"] {
+            width: calc(100% - 160px);
+            padding: 5px;
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .output-section p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-    <!-- Container Utama -->
     <div class="container">
         <!-- Bagian Input -->
         <div class="input-section">
-            <h2>Hitung Total Belanja dan Diskon</h2>
-            <p>Masukkan harga dari tiga item belanja di bawah ini untuk menghitung total belanja, diskon, dan total bayar:</p>
-            <form id="belanjaForm">
-                <label for="item1">Harga Item 1 (Rp):</label>
-                <input type="number" id="item1" placeholder="Masukkan harga item 1" required><br>
-
-                <label for="item2">Harga Item 2 (Rp):</label>
-                <input type="number" id="item2" placeholder="Masukkan harga item 2" required><br>
-
-                <label for="item3">Harga Item 3 (Rp):</label>
-                <input type="number" id="item3" placeholder="Masukkan harga item 3" required><br>
-
-                <button type="button" onclick="hitungTotal()">Hitung Total dan Diskon</button>
+            <h3>Hitung Total Belanja dan Diskon</h3>
+            <form id="formBelanja">
+                <div class="form-group">
+                    <label for="item1">Harga Item 1 (Rp):</label>
+                    <input type="text" id="item1" name="item1">
+                </div>
+                <div class="form-group">
+                    <label for="item2">Harga Item 2 (Rp):</label>
+                    <input type="text" id="item2" name="item2">
+                </div>
+                <div class="form-group">
+                    <label for="item3">Harga Item 3 (Rp):</label>
+                    <input type="text" id="item3" name="item3">
+                </div>
+                <button type="button" onclick="hitungBelanja()">Hitung Total dan Diskon</button>
             </form>
         </div>
-
         <!-- Bagian Output -->
         <div class="output-section">
-            <h2>Hasil Perhitungan:</h2>
-            <p>Hasil perhitungan akan ditampilkan di bawah ini:</p>
-            <div id="output" class="output-box"></div>
+            <h3>Hasil Perhitungan:</h3>
+            <div id="output">
+                <!-- Output akan ditampilkan di sini -->
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function hitungBelanja() {
+            // Ambil nilai input
+            const item1 = parseFloat(document.getElementById("item1").value);
+            const item2 = parseFloat(document.getElementById("item2").value);
+            const item3 = parseFloat(document.getElementById("item3").value);
+
+            // Validasi input
+            if (isNaN(item1) || isNaN(item2) || isNaN(item3) || item1 < 0 || item2 < 0 || item3 < 0) {
+                document.getElementById("output").innerHTML = "<p style='color: red;'>Input tidak valid. Harap masukkan angka positif untuk semua item.</p>";
+                return;
+            }
+
+            // Hitung total belanja
+            const totalBelanja = item1 + item2 + item3;
+
+            // Tentukan diskon
+            let diskon = 0;
+            if (totalBelanja >= 1000000) {
+                diskon = 0.3 * totalBelanja;
+            } else if (totalBelanja >= 500000) {
+                diskon = 0.2 * totalBelanja;
+            } else if (totalBelanja >= 100000) {
+                diskon = 0.1 * totalBelanja;
+            }
+
+            // Hitung total bayar
+            const totalBayar = totalBelanja - diskon;
+
+            // Format angka menjadi Rupiah
+            const formatRupiah = (angka) => {
+                return "Rp " + angka.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            };
+
+            // Tampilkan hasil
+            document.getElementById("output").innerHTML = `
+                <p>Harga Item 1: ${formatRupiah(item1)}</p>
+                <p>Harga Item 2: ${formatRupiah(item2)}</p>
+                <p>Harga Item 3: ${formatRupiah(item3)}</p>
+                <p>Total Belanja: ${formatRupiah(totalBelanja)}</p>
+                <p>Besar Diskon: ${formatRupiah(diskon)}</p>
+                <p>Total Bayar: ${formatRupiah(totalBayar)}</p>
+            `;
+        }
+    </script>
 </body>
 </html>
