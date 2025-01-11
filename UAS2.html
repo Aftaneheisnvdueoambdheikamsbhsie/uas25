@@ -6,7 +6,7 @@
     <title>Input Data Mahasiswa</title>
     <style>
         body {
-            font-family: 'Times New Roman', serif;
+            font-family: Arial,sans-serif;
             background-color: #f2f2f2;
             margin: 0;
             padding: 0;
@@ -33,6 +33,14 @@
         .form-group label {
             flex: 1;
             text-align: left;
+            font-size: 16px;
+        }
+        .form-group.input-short label {
+            flex: 0.8;
+            font-size: 14px;
+        }
+        .form-group textarea {
+            resize: none;
         }
         .form-group input, 
         .form-group select, 
@@ -42,8 +50,9 @@
             border: 1px solid #ddd;
             border-radius: 5px;
         }
-        .form-group textarea {
-            resize: none;
+        .form-group.textarea-group label {
+            flex: 1.2;
+            font-size: 18px;
         }
         button {
             background-color: green;
@@ -53,7 +62,7 @@
             border-radius: 5px;
             cursor: pointer;
             display: block;
-            margin: 0 auto;
+            margin: 20px auto 0;
         }
         button:hover {
             background-color: darkgreen;
@@ -64,15 +73,18 @@
     <div class="form-container">
         <h1>Input Data Mahasiswa</h1>
         <form action="#">
-            <div class="form-group">
+            <!-- Group untuk NPM -->
+            <div class="form-group input-short">
                 <label for="npm">NPM</label>
                 <input type="text" id="npm" name="npm" required>
             </div>
-            <div class="form-group">
+            <!-- Group untuk Nama -->
+            <div class="form-group input-short">
                 <label for="nama">Nama</label>
                 <input type="text" id="nama" name="nama" required>
             </div>
-            <div class="form-group">
+            <!-- Group untuk Kelas -->
+            <div class="form-group input-short">
                 <label for="kelas">Kelas</label>
                 <select id="kelas" name="kelas" required>
                     <option value="">Klik Disini</option>
@@ -81,14 +93,17 @@
                     <option value="C">C</option>
                 </select>
             </div>
-            <div class="form-group">
+            <!-- Group untuk No Telp -->
+            <div class="form-group input-short">
                 <label for="telp">No Telp</label>
                 <input type="text" id="telp" name="telp" required>
             </div>
-            <div class="form-group">
+            <!-- Group untuk Alamat -->
+            <div class="form-group textarea-group">
                 <label for="alamat">Alamat</label>
                 <textarea id="alamat" name="alamat" rows="3" required></textarea>
             </div>
+            <!-- Tombol Submit -->
             <button type="submit">Submit</button>
         </form>
     </div>
