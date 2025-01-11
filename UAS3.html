@@ -13,6 +13,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+            gap: 10px; /* Mengatur jarak antara kotak input dan output */
         }
         .input-section, .output-section {
             width: 45%;
@@ -26,13 +27,14 @@
         }
         .form-group {
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
         }
         label {
-            display: inline-block;
-            width: 150px;
+            flex: 0 0 150px;
         }
         input[type="text"] {
-            width: calc(100% - 160px);
+            flex: 1;
             padding: 5px;
         }
         button {
@@ -43,7 +45,7 @@
             cursor: pointer;
         }
         .output-section p {
-            font-size: 18px;
+            font-size: 16px;
             margin: 10px 0;
         }
     </style>
