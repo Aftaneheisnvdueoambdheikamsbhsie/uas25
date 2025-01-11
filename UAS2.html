@@ -30,13 +30,15 @@
             margin-bottom: 15px;
         }
         .form-group label {
-            width: 80px; /* Label pendek */
+            width: 80px; /* Lebar label */
             text-align: left;
             font-size: 14px;
         }
+        .form-group .colon {
+            margin-right: 10px;
+        }
         .form-group.textarea-group label {
             width: 120px; /* Label lebih besar untuk Alamat */
-            font-size: 16px;
         }
         .form-group input, 
         .form-group select, 
@@ -71,16 +73,19 @@
             <!-- Group untuk NPM -->
             <div class="form-group">
                 <label for="npm">NPM</label>
+                <span class="colon">:</span>
                 <input type="text" id="npm" name="npm" required>
             </div>
             <!-- Group untuk Nama -->
             <div class="form-group">
                 <label for="nama">Nama</label>
+                <span class="colon">:</span>
                 <input type="text" id="nama" name="nama" required>
             </div>
             <!-- Group untuk Kelas -->
             <div class="form-group">
                 <label for="kelas">Kelas</label>
+                <span class="colon">:</span>
                 <select id="kelas" name="kelas" required>
                     <option value="">Klik Disini</option>
                     <option value="A">A</option>
@@ -91,11 +96,13 @@
             <!-- Group untuk No Telp -->
             <div class="form-group">
                 <label for="telp">No Telp</label>
+                <span class="colon">:</span>
                 <input type="text" id="telp" name="telp" required>
             </div>
             <!-- Group untuk Alamat -->
             <div class="form-group textarea-group">
                 <label for="alamat">Alamat</label>
+                <span class="colon">:</span>
                 <textarea id="alamat" name="alamat" rows="3" required></textarea>
             </div>
             <!-- Tombol Submit -->
