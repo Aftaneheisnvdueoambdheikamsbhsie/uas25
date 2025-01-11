@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Total Belanja dan Diskon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e6f7ff;
+            border: 1px solid #b3e0ff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Hitung Total Belanja dan Diskon</h2>
+        <label for="item1">Harga Item 1 (Rp):</label>
+        <input type="number" id="item1" placeholder="Masukkan harga item 1">
+
+        <label for="item2">Harga Item 2 (Rp):</label>
+        <input type="number" id="item2" placeholder="Masukkan harga item 2">
+
+        <label for="item3">Harga Item 3 (Rp):</label>
+        <input type="number" id="item3" placeholder="Masukkan harga item 3">
+
+        <button onclick="hitungTotal()">Hitung Total dan Diskon</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function hitungTotal() {
+            // Mengambil nilai dari input
+            let item1 = parseFloat(document.getElementById('item1').value);
+            let item2 = parseFloat(document.getElementById('item2').value);
+            let item3 = parseFloat(document.getElementById('item3').value);
+
+            // Validasi input
+            if (isNaN(item1) || isNaN(item2) || isNaN(item3) || item1 < 0 || item2 < 0 || item3 < 0) {
+                document.getElementById('result').innerHTML = 
+                    "<p style='color: red;'>Input tidak valid. Harap masukkan angka positif untuk semua item.</p>";
+                return;
+            }
+
+            // Menghitung total belanja
+            let totalBelanja = item1 + item2 + item3;
+            let diskon = 0;
+
+            // Menentukan besar diskon berdasarkan total belanja
+            if (totalBelanja >= 1000000) {
+                diskon = 0.3 * totalBelanja;
+            } else if (totalBelanja >= 500000) {
+                diskon = 0.2 * totalBelanja;
+            } else if (totalBelanja >= 100000) {
+                diskon = 0.1 * totalBelanja;
+            }
+
+            // Menghitung total yang harus dibayar
+            let totalBayar = totalBelanja - diskon;
+
+            // Menampilkan hasil perhitungan
+            document.getElementById('result').innerHTML = `
+                <p><strong>Hasil Perhitungan:</strong></p>
+                <p>Harga Item 1: Rp ${item1.toLocaleString()}</p>
+                <p>Harga Item 2: Rp ${item2.toLocaleString()}</p>
+                <p>Harga Item 3: Rp ${item3.toLocaleString()}</p>
+                <p>Total Belanja: Rp ${totalBelanja.toLocaleString()}</p>
+                <p>Besar Diskon: Rp ${diskon.toLocaleString()}</p>
+                <p>Total Bayar: Rp ${totalBayar.toLocaleString()}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
