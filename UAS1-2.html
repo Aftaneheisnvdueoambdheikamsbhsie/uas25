@@ -6,43 +6,47 @@
     <title>Universitas Indraprasta PGRI</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
+            font-family: 'Times New Roman', serif;
+            background-color: #cbe8f3;
         }
         .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: #cbe8f3;
-            padding: 20px;
+            padding: 20px 0;
         }
         .header img {
-            height: 100px;
+            height: 80px;
+            margin-right: 20px;
         }
         .header h1 {
-            margin: 0;
             font-size: 24px;
+            margin: 0;
+            text-align: center;
         }
         .header p {
+            font-size: 16px;
             margin: 5px 0;
-            font-size: 18px;
         }
         .container {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             margin: 20px;
         }
         .card {
-            border: 1px solid #ddd;
             background-color: white;
-            padding: 10px;
-            margin: 0 10px;
-            width: 250px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 300px;
             text-align: center;
         }
         .card h2 {
-            font-size: 20px;
-            margin: 10px 0;
+            font-size: 18px;
+            background-color: #cbe8f3;
+            margin: -20px -20px 10px -20px;
+            padding: 10px;
         }
         .button {
             background-color: red;
@@ -51,8 +55,10 @@
             margin: 5px 0;
             text-decoration: none;
             display: block;
+            border-radius: 5px;
         }
         .footer {
+            text-align: center;
             margin-top: 20px;
             font-size: 14px;
         }
@@ -61,8 +67,10 @@
 <body>
     <div class="header">
         <img src="unindra.png" alt="Logo">
-        <h1>UNIVERSITAS INDRAPRASTA PGRI</h1>
-        <p>Jl. Nangka No.58 Tanjung Barat - Jaksel</p>
+        <div>
+            <h1>UNIVERSITAS INDRAPRASTA PGRI</h1>
+            <p>Jl. Nangka No.58 Tanjung Barat - Jaksel</p>
+        </div>
     </div>
     <div class="container">
         <div class="card">
@@ -79,13 +87,13 @@
         </div>
         <div class="card">
             <h2>TAMPIL DATA KAMPUS C</h2>
-            <a href="UAS2.html" class="button">Input Data Mahasiswa</a>
+            <a href="UAS2.html"r class="button">Input Data Mahasiswa</a>
             <a href="#" class="button">Tampil Data Mahasiswa</a>
             <a href="#" class="button">Laporan Data Mahasiswa</a>
         </div>
     </div>
     <div class="footer">
-        Created By @202243501355 dan AFTA AULIA MIFDA Tahun 2024-25
+        Created By @NPM dan Nama Tahun 2024-25
     </div>
 </body>
 </html>
